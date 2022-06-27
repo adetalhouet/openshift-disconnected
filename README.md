@@ -146,7 +146,7 @@ mirror:
       packages:
         - name: cert-manager" > /opt/quay/isc.yaml
 
-oc-mirror--config=/opt/quay/isc.yaml docker://registry.isolated.local:8443
+oc-mirror --config=/opt/quay/isc.yaml docker://registry.isolated.local:8443
 ~~~
 
 ## Get RHCOS images and expose them with NGINX
