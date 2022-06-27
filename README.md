@@ -1,5 +1,18 @@
 This document explains how to setup a lab where to deploy OpenShift in a simulated disconnected environment.
 
+<!-- TOC -->
+- [Setup the host](#setup-the-host)
+- [Create the mirror registry VM](#create-the-mirror-registry-vm)
+- [Setup the mirror registry VM](#setup-the-mirror-registry-vm)
+- [Deploy the mirror registry](#deploy-the-mirror-registry)
+- [Mirror OpenShift Release](#mirror-openshift-release)
+- [Mirror operators to our registry](#mirror-operators-to-our-registry)
+- [Get RHCOS images and expose them with NGINX](#get-rhcos-images-and-expose-them-with-nginx)
+- [Setup NGINX](#setup-nginx)
+- [Setup Assisted Installer](#setup-assisted-installer)
+- [Create the cluster in Assisted Installer](#create-the-cluster-in-assisted-installer)
+<!-- TOC -->
+
 ## Setup the host
 
 Create isolated network
