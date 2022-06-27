@@ -5,8 +5,8 @@ This document explains how to setup a lab where to deploy OpenShift in a simulat
 - [Create the mirror registry VM](#create-the-mirror-registry-vm)
 - [Setup the mirror registry VM](#setup-the-mirror-registry-vm)
 - [Deploy the mirror registry](#deploy-the-mirror-registry)
-- [Mirror OpenShift Release](#mirror-openshift-release)
-- [Mirror operators to our registry](#mirror-operators-to-our-registry)
+- [Mirror OpenShift Release](#mirror-openshift-release-and-assisted-installer)
+- [Mirror operators to our registry](#mirror-operators)
 - [Get RHCOS images and expose them with NGINX](#get-rhcos-images-and-expose-them-with-nginx)
 - [Setup NGINX](#setup-nginx)
 - [Setup Assisted Installer](#setup-assisted-installer)
@@ -116,7 +116,7 @@ LOCAL_REPOSITORY="ocp4/openshift4"
 PRODUCT_REPO="openshift-release-dev"
 ~~~
 
-## Mirror OpenShift Release
+## Mirror OpenShift Release and Assisted Installer
 
 ~~~
 oc adm release mirror -a ${LOCAL_SECRET_JSON}  \
@@ -131,7 +131,7 @@ done
 oc -a ${LOCAL_SECRET_JSON} image mirror quay.io/centos7/postgresql-12-centos7:latest ${LOCAL_REGISTRY}/centos7/postgresql-12-centos7:latest
 ~~~
 
-## Mirror operators to our registry
+## Mirror operators
 
 Login into the registries
 ~~~
