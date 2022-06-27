@@ -20,6 +20,7 @@ iptables -D LIBVIRT_FWO -s 192.168.100.0/24 -i virbr100 -j ACCEPT
 
 ## Create the mirror registry VM
 
+~~~
 qemu-img create -f qcow2 -b /var/lib/libvirt/images/rhel-8.5-update-2-x86_64-kvm.qcow2 /var/lib/libvirt/images/registry.qcow2
 qemu-img resize /var/lib/libvirt/images/registry.qcow2 +500G
 
@@ -35,11 +36,16 @@ virt-install --name=registry \
  --graphics vnc,listen=0.0.0.0,tlsport=,defaultMode='insecure' \
  --memballoon none --cpu host-passthrough --autostart --noautoconsole --events on_reboot=restart \
  --import
+~~~
 
+SSH on the node once created and available and perform the following actions
+
+~~~
 growpart /dev/vda 3
 xfs_growfs /
 subscription-manager register
 dnf install -y podman wget jq
+~~~
 
 ## Setup the mirror registry VM
 
