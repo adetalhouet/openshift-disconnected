@@ -1,0 +1,50 @@
+<network connections='2'>
+  <name>isolated</name>
+  <uuid>8ae0f8f2-057b-4835-b8f3-fdcc1e85e64f</uuid>
+  <forward mode='nat'>
+    <nat>
+      <port start='1024' end='65535'/>
+    </nat>
+  </forward>
+  <bridge name='virbr100' stp='on' delay='0'/>
+  <mac address='52:54:00:e9:0b:af'/>
+  <dns>
+    <host ip='192.168.100.10'>
+      <hostname>registry.isolated.local</hostname>
+    </host>
+    <host ip='192.168.100.11'>
+      <hostname>assisted-installer.isolated.local</hostname>
+    </host>
+    <host ip='192.168.100.12'>
+      <hostname>master1.isolated.local</hostname>
+    </host>
+    <host ip='192.168.100.13'>
+      <hostname>master2.isolated.local</hostname>
+    </host>
+    <host ip='192.168.100.14'>
+      <hostname>master3.isolated.local</hostname>
+    </host>
+    <host ip='192.168.100.15'>
+      <hostname>worker1.isolated.local</hostname>
+    </host>
+    <host ip='192.168.100.16'>
+      <hostname>worker2.isolated.local</hostname>
+    </host>
+    <host ip='192.168.100.17'>
+      <hostname>worker3.isolated.local</hostname>
+    </host>
+  </dns>
+  <ip address='192.168.100.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.100.10' end='192.168.100.30'/>
+      <host mac='52:54:00:6c:5c:10' name='registry.isolated.local' ip='192.168.100.10'/>
+      <host mac='52:54:00:6c:5c:11' name='assisted-installer.isolated.local' ip='192.168.100.11'/>
+      <host mac='52:54:00:6c:3c:01' name='master1.isolated.local' ip='192.168.100.12'/>
+      <host mac='52:54:00:6c:3c:02' name='master2.isolated.local' ip='192.168.123.13'/>
+      <host mac='52:54:00:6c:3c:03' name='master3.isolated.local' ip='192.168.123.14'/>
+      <host mac='52:54:00:6c:3c:51' name='worker1.isolated.local' ip='192.168.123.15'/>
+      <host mac='52:54:00:6c:3c:52' name='worker2.isolated.local' ip='192.168.123.16'/>
+      <host mac='52:54:00:6c:3c:53' name='worker3.isolated.local' ip='192.168.123.17'/>
+    </dhcp>
+  </ip>
+</network>

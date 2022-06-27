@@ -1,0 +1,23 @@
+@	IN	SOA	ns1.isolated.local.	root (
+			2019070700	; serial
+			3H		; refresh (3 hours)
+			30M		; retry (30 minutes)
+			2W		; expiry (2 weeks)
+			1W )		; minimum (1 week)
+	IN	NS	ns1.isolated.local.
+;
+ns1.isolated.local.		IN	A	192.168.100.1
+;
+registry.isolated.local. 6400 IN A 192.168.100.10
+assisted-installer.isolated.local. 6400 IN A 192.168.100.10
+;
+api.sno.isolated.local.	6400 IN A 192.168.100.12
+api-int.sno.isolated.local.	6400 IN A 192.168.100.12
+*.apps.sno.isolated.local. 6400 IN A 192.168.100.12
+;
+master1.isolated.local. 6400 IN A 192.168.100.12
+master2.isolated.local. 6400 IN A 192.168.100.13
+master3.isolated.local. 6400 IN A 192.168.100.14
+worker1.isolated.local. 6400 IN A 192.168.100.15
+worker2.isolated.local. 6400 IN A 192.168.100.16
+worker3.isolated.local. 6400 IN A 192.168.100.17
