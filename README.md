@@ -1,4 +1,4 @@
-
+This document explains how to setup a lab where to deploy OpenShift in a simulated disconnected environment.
 
 ## Setup the host
 
@@ -507,6 +507,24 @@ Verify it has been properly patched
 curl http://localhost:8090/api/assisted-install/v2/clusters/657bf5d8-c34d-4838-9600-3ae75c9826c6/install-config
 ~~~
 
+### Generate and download the ISO
+
+Download the ISO
+~~~
+wget -O discovery_image_sno.iso 'http://assisted-installer.isolated.local:8888/images/42b53b63-7998-424d-a167-2b8a0519ca23?arch=x86_64&type=full-iso&version=4.10'
+~~~
+
+Put the ISO at the right place
+~~~
+mv discovery_image_sno.iso /var/lib/libvirt/boot/discovery_image.iso
+~~~
+
+Create the VM (in case of the SNO)
+~~~
+virsh define libvirt/master.xml
+~~~
+
+Proceed with the rest of the installation through the UI.
 
 ## Credits
 
