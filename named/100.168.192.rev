@@ -9,6 +9,3 @@ $TTL 1W
 ;
 12.123.168.192.in-addr.arpa.   IN      PTR     api.sno.isolated.local.
 12.123.168.192.in-addr.arpa.   IN      PTR     api-int.sno.isolated.local.
-;
-192.168.100.10 6400 IN PTR registry.isolated.local.
-192.168.100.11 6400 IN PTR assisted-installer.isolated.local.
