@@ -33,7 +33,7 @@ iptables -D LIBVIRT_FWO -s 192.168.100.0/24 -i virbr100 -j ACCEPT
 
 ## Create the mirror registry VM
 
-The mirror registry have two interfaces, one that has internet access, and one on the isolated network. Once the setup is all done, the interface with internet access can be shut down.
+The mirror registry VM has two interfaces, one that has internet access, and one on the isolated network. Once the setup is all done, the interface with internet access can be shut down.
 
 ~~~
 qemu-img create -f qcow2 -b /var/lib/libvirt/images/rhel-8.5-update-2-x86_64-kvm.qcow2 /var/lib/libvirt/images/registry.qcow2
